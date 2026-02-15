@@ -9,7 +9,6 @@ export default function Navbar() {
 
   return (
     <>
-      {" "}
       <div className="bg-[#05020a] text-white hover:text-purple-300 font-sans overflow-hidden">
         <nav className="relative z-10 w-full px-6 py-6 flex justify-between items-center max-w-7xl mx-auto">
           <div className="text-xl font-bold tracking-wide">Skincare</div>

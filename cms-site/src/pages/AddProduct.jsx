@@ -1,8 +1,8 @@
-import ProductForm from "../components/ProductForm";
 import Toastify from "toastify-js";
 import axios from "axios";
 import baseUrl from "../constant/url";
 import { useNavigate } from "react-router";
+import ProductForm from "../components/productForm";
 
 export default function AddProduct() {
   const navigate = useNavigate();
