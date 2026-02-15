@@ -12,7 +12,7 @@ export default function ProductForm({ nameProp, handleSubmit, product }) {
     price: "",
     stock: "",
     imageUrl: "",
-    categoryId: "",
+    categoryId: "", //
   });
 
   useEffect(() => {
