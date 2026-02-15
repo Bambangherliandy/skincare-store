@@ -6,37 +6,25 @@ import baseUrl from "../constant/url";
 export default function Detail() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchProduct() {
       try {
         const { data } = await axios.get(`${baseUrl}/pub/product/${id}`);
+        console.log(data);
+
         setProduct(data);
       } catch (err) {
         console.log(err);
-      } finally {
-        setLoading(false);
       }
     }
 
     fetchProduct();
   }, [id]);
 
-  if (loading)
-    return (
-      <div className="min-h-screen flex items-center justify-center text-white bg-[#05020a]">
-        Loading...
-      </div>
-    );
-
-  if (!product)
-    return (
-      <div className="min-h-screen flex items-center justify-center text-white bg-[#05020a]">
-        Product not found
-      </div>
-    );
-
+  if (!product) {
+    return <div>Loading...</div>;
+  }
   return (
     <div className="relative min-h-screen bg-[#05020a] text-white font-sans">
       <main className="max-w-6xl mx-auto p-6 lg:p-10">

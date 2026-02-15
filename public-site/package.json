@@ -1,5 +1,5 @@
 {
-  "name": "gc02-bambangherliandy",
+  "name": "public-site",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -14,10 +14,8 @@
     "axios": "^1.13.5",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-router": "^7.13.0",
     "react-router-dom": "^7.13.0",
-    "tailwindcss": "^4.1.18",
-    "toastify-js": "^1.12.0"
+    "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

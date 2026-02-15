@@ -2,13 +2,13 @@ import { useState, useEffect } from "react";
 import ProductCard from "../components/productCard";
 import axios from "axios";
 import baseUrl from "../constant/url";
+import { Link } from "react-router-dom";
 
 export default function Product() {
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState("");
-  const [sort, setSort] = useState("asc");
+  const [sort, setSort] = useState("");
   const [page, setPage] = useState(1);
-  const [perPage] = useState(9);
   const [totalPages, setTotalPages] = useState(1);
 
   useEffect(() => {
@@ -17,7 +17,6 @@ export default function Product() {
         const { data } = await axios.get(`${baseUrl}/pub/product`, {
           params: {
             page,
-            perPage,
             search,
             sort,
           },
@@ -31,13 +30,18 @@ export default function Product() {
     };
 
     fetchProducts();
-  }, [page, perPage, search, sort]);
+  }, [page, search, sort]);
 
   return (
     <div className="relative min-h-screen bg-[#05020a] text-white font-sans overflow-hidden">
       <h1 className="text-center text-6xl md:text-7xl lg:text-8xl font-medium pt-5">
         Our Product
       </h1>
+      <nav className="text-sm mb-6">
+        <Link to="/" className="hover:underline text-gray-400 ml-30">
+          ← Back to home
+        </Link>
+      </nav>
 
       <section className="max-w-7xl mx-auto px-6 mt-12 mb-12 flex flex-col md:flex-row items-center justify-between gap-4">
         <input
@@ -56,8 +60,8 @@ export default function Product() {
           onChange={(e) => setSort(e.target.value)}
           className="w-full md:w-1/3 px-4 py-2 rounded-lg bg-[#1a1a1a] text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
-          <option value="asc">Price: Low to High</option>
-          <option value="desc">Price: High to Low</option>
+          <option value="asc">Oldest</option>
+          <option value="desc">Newest</option>
         </select>
       </section>
 

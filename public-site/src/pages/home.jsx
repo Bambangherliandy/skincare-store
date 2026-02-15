@@ -255,7 +255,7 @@ export default function Home() {
               <h1 className="text-6xl md:text-7xl lg:text-8xl font-medium">
                 Click{" "}
                 <button className="text-blue-400 transition-transform hover:scale-[1.2] duration-300 ">
-                  <a href="/publicproduct">here</a>
+                  <a href="/pub">here</a>
                 </button>{" "}
                 to see All Product
               </h1>

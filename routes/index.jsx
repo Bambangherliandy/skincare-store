@@ -1,15 +1,14 @@
-import { createBrowserRouter, redirect } from "react-router";
-
-import Home from "../pages/home";
-import BaseLayout from "../pages/baseLayout";
-import Detail from "../pages/detail";
-import AuthProduct from "../pages/AuthProduct";
-import AddProduct from "../pages/AddProduct";
-import Product from "../pages/product";
-import Login from "../pages/login";
-import UpdateProduct from "../pages/editProduct";
-import AddUser from "../pages/addUser";
-import AuthCategory from "../pages/authCategory";
+import { createBrowserRouter, redirect } from "react-router-dom";
+import Home from "../public-site/src/pages/home";
+import BaseLayout from "../cms-site/src/pages/baseLayout";
+import AuthProduct from "../cms-site/src/pages/AuthProduct";
+import AddProduct from "../cms-site/src/pages/AddProduct";
+import EditProduct from "../cms-site/src/pages/editProduct";
+import AddUser from "../cms-site/src/pages/addUser";
+import AuthCategory from "../cms-site/src/pages/authCategory";
+import Product from "../public-site/src/pages/product";
+import Detail from "../public-site/src/pages/detail";
+import Login from "../cms-site/src/pages/login";
 
 const authLoader = () => {
   const token = localStorage.getItem("access_token");
@@ -24,7 +23,6 @@ export const router = createBrowserRouter([
     path: "/",
     element: <Home />,
   },
-
   {
     path: "/",
     loader: authLoader,
@@ -40,7 +38,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "products/:id",
-        element: <UpdateProduct />,
+        element: <EditProduct />,
       },
       {
         path: "addUser",
