@@ -33,8 +33,6 @@ export default function AddUser() {
         headers: { Authorization: `Bearer ${token}` },
       });
 
-      console.log(data);
-
       Toastify({
         text: data.message || "User added successfully",
         duration: 3000,
