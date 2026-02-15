@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import ProductForm from "../components/ProductForm";
 import axios from "axios";
 import baseUrl from "../constant/url";
 import Toastify from "toastify-js";
+import ProductForm from "../components/productForm";
 
 export default function EditProduct() {
   const { id } = useParams();
